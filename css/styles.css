@@ -1,0 +1,7 @@
+textarea{
+	min-height: 50px;
+	max-width: 100%;
+}
+.error{
+	color: #c17171;
+}
