@@ -11,13 +11,18 @@
 	<script type="text/javascript" src="js/libraries/angular-route.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/controllers/mainController.js"></script>
+	<script type="text/javascript" src="js/controllers/listController.js"></script>
+
+	<!-- SERVICES -->
+	<script type="text/javascript" src="js/services/pedidosService.js"></script>
 
 </head>
 <body>
-	<div class="container">
+	<header></header>
+	<div class="container main">
 		<ng-view></ng-view>
 	</div>
-	
+	<footer></footer>
 
 	<script type="text/javascript" src="js/libraries/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
