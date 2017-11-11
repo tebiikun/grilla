@@ -194,7 +194,7 @@
 	</thead>
     <tbody>
     
-    <tr ng-repeat="list in commerceList">
+    <tr ng-repeat="list in commerceList track by $index">
 	    <td>{{list.nombre}}</td>
 	    <td>{{list.direccion}}</td>
 	    <td>{{list.telefono}}</td>
