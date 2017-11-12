@@ -1,1 +1,3 @@
 https://stackoverflow.com/questions/26379450/angularjs-using-indexof-inside-ng-repeat-to-show-hide-values
+
+x.indexOf(columnsConfiguration[1].atributo)
