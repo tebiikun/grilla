@@ -7,7 +7,7 @@
     <tbody>
     
     <tr ng-repeat="list in $ctrl.data">
-	    <td ng-if="$ctrl.showColumnContent()"></td>
+	    <td ng-repeat="(key, value) in list" ng-if="$ctrl.showColumnContent(key, $ctrl.columns)"></td>
 	    <td>{{list.direccion}}</td>
 	    <td>{{list.telefono}}</td>
 	    <td>

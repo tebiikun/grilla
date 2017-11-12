@@ -10,8 +10,9 @@
 			
 			var $ctrl = this;
 
-			$ctrl.showColumnContent = function(){
-				console.log("contenidooooo");
+			$ctrl.showColumnContent = function(key, columnList){
+				
+				console.log(key);
 			}
 
 		}
