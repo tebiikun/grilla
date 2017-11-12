@@ -1,0 +1,21 @@
+<table id="mytable" class="table table-striped">
+                   
+	<thead>
+		<th ng-repeat="header in $ctrl.columns">{{header.valor}}</th>
+		<th></th>
+	</thead>
+    <tbody>
+    
+    <tr ng-repeat="list in $ctrl.data">
+	    <td ng-if="$ctrl.showColumnContent()"></td>
+	    <td>{{list.direccion}}</td>
+	    <td>{{list.telefono}}</td>
+	    <td>
+	    	<button class="btn btn-primary btn-xs" data-title="Edit"  ng-click="$ctrl.delete($index, editPath)"><span class="glyphicon glyphicon-pencil"></span></button>
+	    	<button class="btn btn-danger btn-xs" data-title="Delete" ng-click="$ctrl.delete($index)"><span class="glyphicon glyphicon-trash"></span></button>
+	    </td>
+    </tr>
+
+    </tbody>
+        
+</table>

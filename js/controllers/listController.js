@@ -5,10 +5,11 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'PedidosServic
 
 		$ctrl.commerceList = [];
 		$ctrl.commerceList = PedidosService.returnCommerce();
-		console.log($ctrl.commerceList);
+		
+
+
 
 		$ctrl.goNewCommerce = function(){
-			console.log("puto");
 			$location.path('/pedido');
 		}
 
@@ -18,5 +19,17 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'PedidosServic
 			PedidosService.deleteCommerce(id);
 			$ctrl.commerceList = PedidosService.returnCommerce();
 		}
+
+
+		$ctrl.columnsConfiguration = [
+			{
+				atributo: 'nombre',
+				valor: 'Name'
+			},
+			{
+				atributo: 'descripcion',
+				valor: 'Description'
+			}
+		]
 
 	}]);

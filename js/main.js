@@ -1,10 +1,5 @@
 var despegarApp = angular.module('despegar',['ngRoute'])
-	.component('home', {
-	  template: '<h1>Home</h1><p>Hello, !</p>',
-	  bindings: {
-	    user: '<'
-	  }
-	})
+	
 	.config(['$routeProvider', function($routeProvider){
 
 		$routeProvider.

@@ -1,26 +1,6 @@
 
 <button class="btn btn-primary pull-right" ng-click="$ctrl.goNewCommerce()">NUEVO COMERCIO</button>
 
-<table id="mytable" class="table table-striped">
-                   
-	<thead>
-		<th>Nombre</th>
-		<th>Dirección</th>
-		<th>Teléfono</th>
-		<th></th>
-	</thead>
-    <tbody>
-    
-    <tr ng-repeat="list in $ctrl.commerceList">
-	    <td>{{list.nombre}}</td>
-	    <td>{{list.direccion}}</td>
-	    <td>{{list.telefono}}</td>
-	    <td>
-	    	<button class="btn btn-primary btn-xs" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button>
-	    	<button class="btn btn-danger btn-xs" data-title="Delete" ng-click="$ctrl.delete($index)"><span class="glyphicon glyphicon-trash"></span></button>
-	    </td>
-    </tr>
 
-    </tbody>
-        
-</table>
+<holi></holi>
+<grid-table rows="9" data="$ctrl.commerceList" editPath="'/pedido'" columns="$ctrl.columnsConfiguration"></grid-table>
