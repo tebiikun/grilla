@@ -23,12 +23,20 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'PedidosServic
 
 		$ctrl.columnsConfiguration = [
 			{
-				atributo: 'nombre',
-				valor: 'Name'
+				colName: 'Name',
+				attr: 'nombre'
 			},
 			{
-				atributo: 'descripcion',
-				valor: 'Description'
+				attr: 'descripcion',
+				colName: 'Description'
+			},
+			{
+				attr: 'comercial.email',
+				colName: 'correo com'
+			},
+			{
+				attr: 'administrativo.telefono',
+				colName: 'tel adm'
 			}
 		]
 
