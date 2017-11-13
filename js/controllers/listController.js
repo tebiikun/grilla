@@ -1,28 +1,33 @@
-despegarApp.controller('ListController', [ '$scope', '$location', 'PedidosService',
-	function($scope, $location, PedidosService){
+despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceService',
+	function($scope, $location, CommerceService){
 
 		var $ctrl = this;
 
 		$ctrl.commerceList = [];
-		$ctrl.commerceList = PedidosService.returnCommerce();
+		$ctrl.commerceList = CommerceService.returnCommerces();
 		
 
 
 
-		$ctrl.goNewCommerce = function(){
-			$location.path('/pedido');
+		$ctrl.goCommerce = function(id){
+			if(id){
+				$location.path('/commerce/'+id);
+			}else{
+				$location.path('/commerce/');
+			}
+			
 		}
 
 		$ctrl.callback = function(id){
-			PedidosService.deleteCommerce(id);
-			$ctrl.commerceList = PedidosService.returnCommerce();
+			CommerceService.deleteCommerce(id);
+			$ctrl.commerceList = CommerceService.returnCommerces();
 		}
 
 		$ctrl.delete= function(id){
 			console.log("borrando: " + id);
 
-			PedidosService.deleteCommerce(id);
-			$ctrl.commerceList = PedidosService.returnCommerce();
+			CommerceService.deleteCommerce(id);
+			$ctrl.commerceList = CommerceService.returnCommerces();
 		}
 
 		$ctrl.columnsConfiguration = [

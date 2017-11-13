@@ -1,0 +1,182 @@
+<form name="$ctrl.commerceForm" ng-submit="$ctrl.save()" novalidate>
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<h2>Datos Administrativos</h2>
+				<hr>
+
+				<div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Nombre</label>
+			      <div class="col-sm-3">
+			        <input type="text" name="nombre" maxlength="50" required ng-model="$ctrl.commerce.nombre" class="form-control">
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-2">
+			      	<span ng-show="	$ctrl.commerceForm.nombre.$dirty 	&& 	$ctrl.commerceForm.nombre.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 	&&  $ctrl.commerceForm.nombre.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Teléfono</label>
+			      <div class="col-sm-3">
+			        <input type="text" name="telefono" ng-model="$ctrl.commerce.telefono" maxlength="50" required class="form-control">
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-2">
+			        <span ng-show="	$ctrl.commerceForm.telefono.$dirty 	&& 	$ctrl.commerceForm.telefono.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.telefono.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Descripcion</label>
+			      <div class="col-sm-4">
+			        <textarea name="descripcion" ng-model="$ctrl.commerce.descripcion" maxlength="1000" required class="form-control"></textarea>
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-1">
+			        <span ng-show="	$ctrl.commerceForm.descripcion.$dirty 	&& 	$ctrl.commerceForm.descripcion.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 			&&  $ctrl.commerceForm.descripcion.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Especialidades</label>
+			      <div class="col-sm-4">
+			        <textarea name="especialidades" ng-model="$ctrl.commerce.especialidades" maxlength="500" required class="form-control"></textarea>
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-1">
+			        <span ng-show="	$ctrl.commerceForm.especialidades.$dirty 	&& 	$ctrl.commerceForm.especialidades.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 			&&  $ctrl.commerceForm.especialidades.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Dirección</label>
+			      <div class="col-sm-3">
+			        <input type="text" name="direccion" ng-model="$ctrl.commerce.direccion" maxlength="200" required class="form-control">
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-2">
+			        <span ng-show="	$ctrl.commerceForm.direccion.$dirty 	&& 	$ctrl.commerceForm.direccion.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.direccion.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h2>Contacto administrativo</h2>
+				<hr>
+				
+				<div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Nombre</label>
+			      <div class="col-sm-6" role="alert">
+			        <input type="text" name="nombreadministrativo" ng-model="$ctrl.commerce.administrativo.nombre" maxlength="200" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.nombreadministrativo.$dirty 	&& 	$ctrl.commerceForm.nombreadministrativo.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.nombreadministrativo.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Apellido</label>
+			      <div class="col-sm-6">
+			        <input type="text" name="apellidoadministrativo" ng-model="$ctrl.commerce.administrativo.apellido" maxlength="200" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.apellidoadministrativo.$dirty 	&& 	$ctrl.commerceForm.apellidoadministrativo.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.apellidoadministrativo.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Teléfono</label>
+			      <div class="col-sm-6">
+			        <input type="text" name="telefonoadministrativo" ng-model="$ctrl.commerce.administrativo.telefono" maxlength="100" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.telefonoadministrativo.$dirty 	&& 	$ctrl.commerceForm.telefonoadministrativo.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.telefonoadministrativo.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Email</label>
+			      <div class="col-sm-6">
+			        <input type="email" name="emailadministrativo" ng-model="$ctrl.commerce.administrativo.email" maxlength="100" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.emailadministrativo.$dirty 	&& 	$ctrl.commerceForm.emailadministrativo.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailadministrativo.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      	<span ng-show="	$ctrl.commerceForm.emailadministrativo.$dirty 	&& 	$ctrl.commerceForm.emailadministrativo.$error.email 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailadministrativo.$error.email" class="error">
+			      			El email ingresado es incorrecto
+			      	</span>
+			      </div>
+			    </div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h2>Contacto comercial</h2>
+				<hr>
+				
+				<div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Nombre</label>
+			      <div class="col-sm-6" role="alert">
+			        <input type="text" name="nombrecomercial" ng-model="$ctrl.commerce.comercial.nombre" maxlength="200" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.nombrecomercial.$dirty 	&& 	$ctrl.commerceForm.nombrecomercial.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.nombrecomercial.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Apellido</label>
+			      <div class="col-sm-6">
+			        <input type="text" name="apellidocomercial" ng-model="$ctrl.commerce.comercial.apellido" maxlength="200" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.apellidocomercial.$dirty 	&& 	$ctrl.commerceForm.apellidocomercial.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.apellidocomercial.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Teléfono</label>
+			      <div class="col-sm-6">
+			        <input type="text" name="telefonocomercial" ng-model="$ctrl.commerce.comercial.telefono" maxlength="100" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.telefonoadministrativo.$dirty 	&& 	$ctrl.commerceForm.telefonocomercial.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.telefonocomercial.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      </div>
+			    </div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-4 col-form-label">Email</label>
+			      <div class="col-sm-6">
+			        <input type="email" name="emailcomercial" ng-model="$ctrl.commerce.comercial.email" maxlength="100" required class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.emailcomercial.$dirty 	&& 	$ctrl.commerceForm.emailcomercial.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailcomercial.$error.required" class="error">
+			      			Este campo es obligatorio
+			      	</span>
+			      	<span ng-show="	$ctrl.commerceForm.emailcomercial.$dirty 	&& 	$ctrl.commerceForm.emailcomercial.$error.email 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailcomercial.$error.email" class="error">
+			      			El email ingresado es incorrecto
+			      	</span>
+			      </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

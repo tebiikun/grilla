@@ -1,4 +1,4 @@
-despegarApp.factory('PedidosService', function() {
+despegarApp.factory('CommerceService', function() {
 
 	var commerceList = 
 	[
@@ -72,11 +72,20 @@ despegarApp.factory('PedidosService', function() {
 			commerceList.push(commerce);
 			return commerceList;
 		},
-		deleteCommerce: function(indexCommerce){
-			console.log("borrando" + commerceList.map( (el) => el.id ).indexOf(indexCommerce))
-			commerceList.splice(commerceList.map( (el) => el.id ).indexOf(indexCommerce), 1);
+		updateCommerce: function(commerce){
+			for(var i=0; i< commerceList.length; i++){
+				if(commerceList[i].id == commerce.id){
+					commerceList[i] = commerce
+					break;
+				}
+			}
+
+			return commerceList;
 		},
-		returnCommerce : function(){
+		deleteCommerce: function(idCommerce){
+			commerceList.splice(commerceList.map( (el) => el.id ).indexOf(idCommerce), 1);
+		},
+		returnCommerces : function(){
 			return commerceList;
 		}
 	}

@@ -4,12 +4,16 @@ var despegarApp = angular.module('despegar',['ngRoute', 'angularUtils.directives
 
 		$routeProvider.
 			when('/', {
-				templateUrl: 'partials/main.html', 
+				templateUrl: 'partials/list.html', 
 				controller: 'ListController as $ctrl' 
 			})
-			.when('/pedido', {
-				templateUrl: 'partials/pedido.html', 
-				controller: 'CommerceController'
+			.when('/commerce', {
+				templateUrl: 'partials/commerce.html', 
+				controller: 'CommerceController as $ctrl'
+			})
+			.when('/commerce/:id', {
+				templateUrl: 'partials/commerce.html', 
+				controller: 'CommerceController as $ctrl'
 			})
 			.otherwise({redirectTo: '/'});
 
