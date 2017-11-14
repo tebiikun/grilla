@@ -1,7 +1,4 @@
 
 <button class="btn btn-primary pull-right" ng-click="$ctrl.goCommerce()">NUEVO COMERCIO</button>
-<button class="btn btn-primary pull-right" ng-click="$ctrl.goCommerce(1)">UPDATE 1</button>
 
-
-<holi></holi>
-<grid-table rows="2" data="$ctrl.commerceList" columns="$ctrl.columnsConfiguration" delete="$ctrl.delete(id)" deleted="$ctrl.delete(index)"></grid-table>
+<grid-table data="$ctrl.commerceList" config="$ctrl.gridConfig"></grid-table>

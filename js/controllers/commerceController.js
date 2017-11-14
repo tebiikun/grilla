@@ -2,33 +2,17 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 	function($scope, $location, $routeParams, CommerceService){
 		
 		$ctrl = this;
-
 		$ctrl.isNewCommerce = typeof $routeParams.id === 'undefined';
 		
+		$ctrl.commerce = {}
 		$ctrl.commerceList = [];
 
-		$ctrl.commerce = {
-			id: 1,
-			administrativo:{
-				nombre: "nombre adm", 
-				apellido: "ape adm", 
-				telefono: "44887995544", 
-				email: "micorreo@gmail.com"
-			},
-			comercial: {
-				email: "micorreo@gmail.com", 
-				telefono: "44887995544", 
-				apellido: "ape com", 
-				nombre: "nombre com"
-			},
-			descripcion: "comercio de prueba",
-			direccion: "calle falsa 123",
-			especialidades: "esta es mi especialidad de comidas",
-			nombre: "nombre1",
-			telefono: "4488775544"
-		};
-
-		
+		if($ctrl.isNewCommerce){
+			$ctrl.commerce = CommerceService.getMockCommerce();
+		}
+		else{
+			$ctrl.commerce = CommerceService.getCommerce($routeParams.id);
+		}
 
 		$ctrl.commerceList = CommerceService.returnCommerces();
 
@@ -58,8 +42,6 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 
 
 		$ctrl.save = function(){
-			console.log($routeParams.id);
-
 			if($ctrl.isNewCommerce){
 				$ctrl.createCommerce($ctrl.commerce);
 			}else{
@@ -67,11 +49,5 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 			}
 		}
 
-
-/*		$(document).ready( function () {
-			console.log("iniciando DataTable");
-		    $('#mytable').DataTable();
-		});
-*/
 	}]);
 

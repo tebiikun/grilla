@@ -1,4 +1,4 @@
-var despegarApp = angular.module('despegar',['ngRoute', 'angularUtils.directives.dirPagination'])
+var despegarApp = angular.module('despegar',['ngRoute', 'angularUtils.directives.dirPagination', 'ngSanitize'])
 	
 	.config(['$routeProvider', function($routeProvider){
 

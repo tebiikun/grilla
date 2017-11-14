@@ -1,0 +1,44 @@
+<div class="col-md-12">
+	<div class="col-md-1">
+     	<div class="button-group">
+	        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span> Filtros</button>
+			<!--<ul class="dropdown-menu">
+			  <li ng-repeat="(colpos, header) in $ctrl.columns"><a href="#" class="small" tabIndex="-1"><input ng-model="$ctrl.filterOptions[colpos]" type="checkbox"/>&nbsp;{{header.attr}}</a></li>
+			</ul>-->
+	  	</div>
+	</div>
+	<div class="col-md-11">
+		<form class="form-inline col-md-12">
+	    <div class="form-group" ng-repeat="(colpos, header) in $ctrl.columns">
+	        <label >{{header.colName}}</label>
+	        <!--<input type="text" ng-model="$ctrl.search['administrativo']['telefono']" class="form-control" placeholder="Search">-->
+	        <input  type="text" ng-model="$ctrl.search[header.filter]" class="form-control" placeholder="Search">
+	    </div>
+	</form>
+	</div>
+	
+</div>
+
+
+
+<table class="table table-striped">
+	<thead>
+		<th ng-repeat="col in $ctrl.config">{{col.colName}} 
+			<span ng-if="col.order">
+				<i class="glyphicon glyphicon-chevron-up"></i>
+			</span>
+		</th>
+	</thead>
+    <tbody>
+    <tr dir-paginate="data in collection | filter: $ctrl.search | itemsPerPage: pageSize">
+	   <td ng-repeat="column in $ctrl.columns" ng-if="$ctrl.showColumnContent(column.attr, data)">{{$ctrl.columnValue}}</td>
+	    <td>
+	    	<button class="btn btn-primary btn-xs" data-title="Edit"  ng-click="$ctrl.call({id:$index})"><span class="glyphicon glyphicon-pencil"></span></button>
+	    	<button class="btn btn-danger btn-xs" data-title="Delete" ng-click="$ctrl.delete({id: data.id})"><span class="glyphicon glyphicon-trash"></span></button>
+	    </td>
+    </tr>
+    </tbody>
+    
+</table>
+
+<dir-pagination-controls></dir-pagination-controls>

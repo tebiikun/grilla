@@ -3,9 +3,9 @@ despegarApp.factory('CommerceService', function() {
 	var commerceList = 
 	[
 		{	
-			id: 0,
+			id: (new Date()).getTime() + 1,
 			administrativo:{
-				nombre: "nombre adm", 
+				nombre: "nombre adm 4", 
 				apellido: "ape adm", 
 				telefono: "111", 
 				email: "micorreo@gmail.com"
@@ -17,15 +17,15 @@ despegarApp.factory('CommerceService', function() {
 				nombre: "nombre com"
 		},
 			descripcion: "b",
-			direccion: "calle falsa 123",
+			direccion: "calle falsa 345",
 			especialidades: "esta es mi especialidad de comidas",
 			nombre: "nombre1",
 			telefono: "4488775544"
 		},
 		{	
-			id: 1,
+			id: (new Date()).getTime() + 2,
 			administrativo:{
-				nombre: "nombre adm", 
+				nombre: "nombre adm 7", 
 				apellido: "ape adm", 
 				telefono: "222", 
 				email: "micorreo@gmail.com"
@@ -37,15 +37,15 @@ despegarApp.factory('CommerceService', function() {
 				nombre: "nombre com"
 			},
 			descripcion: "a",
-			direccion: "calle falsa 123",
+			direccion: "calle falsa 222",
 			especialidades: "esta es mi especialidad de comidas",
 			nombre: "nombre2",
 			telefono: "4488775544"
 		},
 		{
-			id: 2,
+			id: (new Date()).getTime() + 3,
 			administrativo:{
-				nombre: "nombre adm", 
+				nombre: "nombre adm3", 
 				apellido: "ape adm", 
 				telefono: "333", 
 				email: "micorreo@gmail.com"
@@ -57,7 +57,7 @@ despegarApp.factory('CommerceService', function() {
 				nombre: "nombre com"
 			},
 			descripcion: "d",
-			direccion: "calle falsa 123",
+			direccion: "calle falsa 756",
 			especialidades: "esta es mi especialidad de comidas",
 			nombre: "nombre3",
 			telefono: "4488775544"
@@ -65,13 +65,14 @@ despegarApp.factory('CommerceService', function() {
 	]
 
 	var Iservice = {
+
 		addCommerce : function(commerce){
-			var uniq = (new Date()).getTime();
-			console.log(uniq);
-			commerce.id = uniq;
+			commerce.id = (new Date()).getTime();
 			commerceList.push(commerce);
+			console.log("comercio generado con id: " + commerce.id);
 			return commerceList;
 		},
+
 		updateCommerce: function(commerce){
 			for(var i=0; i< commerceList.length; i++){
 				if(commerceList[i].id == commerce.id){
@@ -79,14 +80,52 @@ despegarApp.factory('CommerceService', function() {
 					break;
 				}
 			}
-
+			console.log("se actualizo el comercio: " + commerce.id);
 			return commerceList;
 		},
-		deleteCommerce: function(idCommerce){
-			commerceList.splice(commerceList.map( (el) => el.id ).indexOf(idCommerce), 1);
+
+		deleteCommerce: function(id){
+			for(var i=0; i< commerceList.length; i++){
+				if(commerceList[i].id == id){
+					commerceList.splice(i, 1);
+					break;
+				}
+			}
+			console.log("se elimino el comercio: " + id);
 		},
+
+		getCommerce: function(id){
+			for(var i=0; i< commerceList.length; i++){
+				if(commerceList[i].id == id){
+					return commerceList[i];
+				}
+			}
+		},
+
 		returnCommerces : function(){
 			return commerceList;
+		},
+
+		getMockCommerce : function(){
+			return {
+				administrativo:{
+					nombre: "nombre adm mock", 
+					apellido: "ape adm mock", 
+					telefono: "000 mock", 
+					email: "correo.adm.mock@mock.com"
+				},
+				comercial: {
+					email: "micorrecomercial.mock@mock.com", 
+					telefono: "999 mock", 
+					apellido: "ape com mock", 
+					nombre: "nombre com mock"
+				},
+				descripcion: "comercio mock",
+				direccion: "calle mock 666",
+				especialidades: "esta es mi especialidad de comidas mockeadas",
+				nombre: "nombre princ mock",
+				telefono: "0303456 mock"
+			};
 		}
 	}
 
