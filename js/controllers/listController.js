@@ -24,9 +24,7 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 		$ctrl.gridConfig =
 		{	
 			pagination:{
-				rowsForPage: 3,
-				maxPages: 3,
-				currentPage: 0
+				rowsForPage: 3
 			},
 			data:
 			[

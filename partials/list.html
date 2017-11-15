@@ -1,4 +1,18 @@
 
-<button class="btn btn-primary pull-right" ng-click="$ctrl.goCommerce()">NUEVO COMERCIO</button>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h2> Listado de Deliveries</h2>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<button class="btn btn-primary pull-right" ng-click="$ctrl.goCommerce()">NUEVO COMERCIO</button>
+			</div>
+		</div>
+		<hr>
+	</div>
+</div>
+
+
 
 <grid-table data="$ctrl.commerceList" config="$ctrl.gridConfig"></grid-table>
