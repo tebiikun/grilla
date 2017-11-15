@@ -23,8 +23,10 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 
 		$ctrl.gridConfig =
 		{	
-			pages:{
-				rows: 2
+			pagination:{
+				rowsForPage: 3,
+				maxPages: 3,
+				currentPage: 0
 			},
 			data:
 			[
@@ -33,28 +35,17 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 					colName: 'Name',
 					order: true,
 					direction: 'asc',
-					sortFunction: function(attr){
-								return $ctrl.commerceList.sort(
-									function (a, b) {
-										if (a[attr] > b[attr]) {
-											return 1;
-										}
-										if (a[attr] < b[attr]) {
-											return -1;
-										}
-									}
-								);
-							}
+					filter: true
 				},
 				{
 					attr: 'descripcion',
 					colName: 'Description',
 					order: true,
-					direction: 'desc'
+					direction: 'asc'
 				},
 				{
-					attr: 'administrativo.nombre',
-					colName: 'phone',
+					attr: 'comercial.nombre',
+					colName: 'com nomb',
 					order: true,
 					direction: 'asc'
 				},

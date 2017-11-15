@@ -71,10 +71,24 @@
 			      </div>
 			    </div>
 			</div>
+
+			
+
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<h2>Contacto administrativo</h2>
 				<hr>
-				
+			</div>
+
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h2>Contacto comercial</h2>
+				<hr>
+			</div>
+
+			<div class="col-md-6 col-md-offset-6 col-sm-6 col-xs-12">
+				<input type="checkbox" ng-model="$ctrl.idemAdministrativo" />
+			</div>
+
+			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group row">
 			      <label class="col-sm-4 col-form-label">Nombre</label>
 			      <div class="col-sm-6" role="alert">
@@ -123,14 +137,14 @@
 			      </div>
 			    </div>
 			</div>
+			
 			<div class="col-md-6 col-sm-6 col-xs-12">
-				<h2>Contacto comercial</h2>
-				<hr>
 				
+
 				<div class="form-group row">
 			      <label class="col-sm-4 col-form-label">Nombre</label>
 			      <div class="col-sm-6" role="alert">
-			        <input type="text" name="nombrecomercial" ng-model="$ctrl.commerce.comercial.nombre" maxlength="200" required class="form-control">
+			        <input type="text" name="nombrecomercial" ng-model="$ctrl.commerce.comercial.nombre" maxlength="200" ng-required="$ctrl.idemAdministrativo" class="form-control">
 			        <span ng-show="	$ctrl.commerceForm.nombrecomercial.$dirty 	&& 	$ctrl.commerceForm.nombrecomercial.$error.required 	|| 
 			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.nombrecomercial.$error.required" class="error">
 			      			Este campo es obligatorio
@@ -141,7 +155,7 @@
 			    <div class="form-group row">
 			      <label class="col-sm-4 col-form-label">Apellido</label>
 			      <div class="col-sm-6">
-			        <input type="text" name="apellidocomercial" ng-model="$ctrl.commerce.comercial.apellido" maxlength="200" required class="form-control">
+			        <input type="text" name="apellidocomercial" ng-model="$ctrl.commerce.comercial.apellido" maxlength="200" ng-required="$ctrl.idemAdministrativo" class="form-control">
 			        <span ng-show="	$ctrl.commerceForm.apellidocomercial.$dirty 	&& 	$ctrl.commerceForm.apellidocomercial.$error.required 	|| 
 			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.apellidocomercial.$error.required" class="error">
 			      			Este campo es obligatorio
@@ -152,8 +166,8 @@
 			    <div class="form-group row">
 			      <label class="col-sm-4 col-form-label">Teléfono</label>
 			      <div class="col-sm-6">
-			        <input type="text" name="telefonocomercial" ng-model="$ctrl.commerce.comercial.telefono" maxlength="100" required class="form-control">
-			        <span ng-show="	$ctrl.commerceForm.telefonoadministrativo.$dirty 	&& 	$ctrl.commerceForm.telefonocomercial.$error.required 	|| 
+			        <input type="text" name="telefonocomercial" ng-model="$ctrl.commerce.comercial.telefono" maxlength="100" ng-required="$ctrl.idemAdministrativo" class="form-control">
+			        <span ng-show="	$ctrl.commerceForm.telefonocomercial.$dirty 	&& 	$ctrl.commerceForm.telefonocomercial.$error.required 	|| 
 			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.telefonocomercial.$error.required" class="error">
 			      			Este campo es obligatorio
 			      	</span>
@@ -163,13 +177,13 @@
 			    <div class="form-group row">
 			      <label class="col-sm-4 col-form-label">Email</label>
 			      <div class="col-sm-6">
-			        <input type="email" name="emailcomercial" ng-model="$ctrl.commerce.comercial.email" maxlength="100" required class="form-control">
+			        <input type="email" name="emailcomercial" ng-model="$ctrl.commerce.comercial.email" maxlength="100" ng-required="$ctrl.idemAdministrativo" class="form-control">
 			        <span ng-show="	$ctrl.commerceForm.emailcomercial.$dirty 	&& 	$ctrl.commerceForm.emailcomercial.$error.required 	|| 
 			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailcomercial.$error.required" class="error">
 			      			Este campo es obligatorio
 			      	</span>
-			      	<span ng-show="	$ctrl.commerceForm.emailcomercial.$dirty 	&& 	$ctrl.commerceForm.emailcomercial.$error.email 	|| 
-			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailcomercial.$error.email" class="error">
+			      	<span ng-show="	$ctrl.idemAdministrativo && $ctrl.commerceForm.emailcomercial.$dirty 	&& 	$ctrl.commerceForm.emailcomercial.$error.email 	|| 
+			      					$ctrl.idemAdministrativo && $ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.emailcomercial.$error.email" class="error">
 			      			El email ingresado es incorrecto
 			      	</span>
 			      </div>

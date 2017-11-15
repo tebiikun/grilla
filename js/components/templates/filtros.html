@@ -2,22 +2,20 @@
 	<div class="col-md-1">
      	<div class="button-group">
 	        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span> Filtros</button>
-			<!--<ul class="dropdown-menu">
-			  <li ng-repeat="(colpos, header) in $ctrl.columns"><a href="#" class="small" tabIndex="-1"><input ng-model="$ctrl.filterOptions[colpos]" type="checkbox"/>&nbsp;{{header.attr}}</a></li>
-			</ul>-->
 	  	</div>
 	</div>
 	<div class="col-md-11">
 		<form class="form-inline col-md-12">
-	    <div class="form-group" ng-repeat="(colpos, header) in $ctrl.columns">
-	        <label >{{header.colName}}</label>
+	    <div class="form-group" ng-repeat="col in $ctrl.config.data" >
+	        <label ng-if="col.filter">{{col.colName}}</label>
 	        <!--<input type="text" ng-model="$ctrl.search['administrativo']['telefono']" class="form-control" placeholder="Search">-->
-	        <input  type="text" ng-model="$ctrl.search[header.filter]" class="form-control" placeholder="Search">
+	        <input  type="text" ng-change="$ctrl.filtro(col)" ng-if="col.filter" ng-model="$ctrl.search.nombre" class="form-control" placeholder="Search">
 	    </div>
 	</form>
 	</div>
 	
 </div>
+
 
 
 

@@ -33,7 +33,7 @@ despegarApp.factory('CommerceService', function() {
 			comercial: {
 				email: "micorreo@gmail.com", 
 				telefono: "222", 
-				apellido: "ape com", 
+				apellido: "ape1", 
 				nombre: "nombre com"
 			},
 			descripcion: "a",
@@ -60,6 +60,126 @@ despegarApp.factory('CommerceService', function() {
 			direccion: "calle falsa 756",
 			especialidades: "esta es mi especialidad de comidas",
 			nombre: "nombre3",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 4,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre4",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 5,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre5",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 6,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre6",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 7,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre7",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 8,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre8",
+			telefono: "4488775544"
+		},
+		{
+			id: (new Date()).getTime() + 9,
+			administrativo:{
+				nombre: "nombre adm3", 
+				apellido: "ape adm", 
+				telefono: "333", 
+				email: "micorreo@gmail.com"
+			},
+			comercial: {
+				email: "micorreo@gmail.com", 
+				telefono: "333", 
+				apellido: "ape com", 
+				nombre: "nombre com"
+			},
+			descripcion: "d",
+			direccion: "calle falsa 756",
+			especialidades: "esta es mi especialidad de comidas",
+			nombre: "nombre9",
 			telefono: "4488775544"
 		}
 	]
@@ -91,6 +211,7 @@ despegarApp.factory('CommerceService', function() {
 					break;
 				}
 			}
+			console.log(commerceList);
 			console.log("se elimino el comercio: " + id);
 		},
 

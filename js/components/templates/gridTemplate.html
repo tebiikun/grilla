@@ -6,12 +6,32 @@
 			</span>
 		</th>
 	</thead>
+	<tfoot>
+        <td colspan="6">
+            <div class="pull-right">
+                <ul class="pagination">
+                    <li ng-class="{disabled: $ctrl.currentPage < 2}" ng-if="$ctrl.pages.length > 0">
+                        <a href ng-click="$ctrl.previousPage()">«{{$ctrl.config.data.currentPage}}</a>
+                    </li>
+                
+                    <li ng-repeat="page in $ctrl.pages track by $index" ng-class="{'active': $ctrl.currentPage == $index + 1}">
+                        <a href ng-bind="$index + 1" ng-click="$ctrl.setPage($index + 1)"></a>
+                    </li>
+                 
+                    <li ng-class="{disabled: $ctrl.currentPage == $ctrl.pages.length}" ng-if="$ctrl.pages.length > 0">
+                        <a href ng-click="$ctrl.nextPage()">»</a>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tfoot>
     <tbody>
-	    <tr ng-repeat="row in $ctrl.data track by $index">
+	    <tr ng-repeat="row in $ctrl.nuevaData track by $index">
 			<td ng-repeat="col in $ctrl.config.data">
 				<span ng-bind-html="$ctrl.showContent(row, col)" ng-click="$ctrl.runAction(row, col)"></span>
 			</td>
 	    </tr>
     </tbody>
+
     
 </table>

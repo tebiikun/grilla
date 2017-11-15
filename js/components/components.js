@@ -6,7 +6,9 @@
 		},
 		controller: function ($scope, $filter) {
 			var $ctrl = this;
-			
+			$ctrl.search;
+			$ctrl.changeStateSort = false;
+
 			$ctrl.runAction = function(row, col){
 				if(col.action){
 					return col.action(row.id);
@@ -28,21 +30,22 @@
 				}
 
 				$ctrl.data.sort( col.sortFunction || function (a, b) {
-					if (a[col.attr] > b[col.attr]) {
-						return 1;
-					}
-					if (a[col.attr] < b[col.attr]) {
+					if ($ctrl.safeContent(a, col.attr) < $ctrl.safeContent(b, col.attr)) {
 						return -1;
+					}
+					if ($ctrl.safeContent(a, col.attr) > $ctrl.safeContent(b, col.attr)) {
+						return 1;
 					}
 				});
 
-				if(col.direction == 'desc'){
-					$ctrl.data.reverse();
-					col.direction = 'asc';
-				}else{
-					
+				if(col.direction == 'asc'){
 					col.direction = 'desc';
+					$ctrl.data.reverse();
+				}else{
+					col.direction = 'asc';
 				}
+
+				$ctrl.changeStateSort = !$ctrl.changeStateSort;
 			}
 
 			$ctrl.safeContent = function(data, attr){
@@ -54,17 +57,39 @@
 			}
 
 			this.$onInit = function () {
-
-				// init
-			    $scope.sort = {       
-	                sortingOrder : 'id',
-	                reverse : false
-	            };
-
-				$ctrl.items = this.data;
-				$scope.currentPage = 1;
-				$scope.pageSize = $ctrl.rows;
-				$scope.collection = this.data;
+				$ctrl.currentPage = 1;
+				$ctrl.rowsForPage = $ctrl.config.pagination.rowsForPage;
 			};
+
+			$ctrl.updatePages = function(){
+				$ctrl.pages = new Array(Math.ceil($ctrl.data.length / $ctrl.config.pagination.rowsForPage));
+				if($ctrl.currentPage > $ctrl.pages.length){
+					$ctrl.currentPage = $ctrl.pages.length;
+				}
+			}
+
+			$ctrl.setPage = function(page){
+				$ctrl.currentPage = page;
+			}
+
+			$ctrl.previousPage = function(){
+				if($ctrl.currentPage > 1){
+					$ctrl.currentPage = $ctrl.currentPage - 1;
+				}
+			}
+
+			$ctrl.nextPage = function(){
+				if($ctrl.currentPage < $ctrl.pages.length){
+					$ctrl.currentPage = $ctrl.currentPage + 1;
+				}
+			}
+
+			$scope.$watch('$ctrl.currentPage + $ctrl.rowsForPage + $ctrl.data + $ctrl.changeStateSort', function() 
+            {	
+                var desde = (($ctrl.currentPage - 1) * $ctrl.rowsForPage);
+                var hasta = desde + $ctrl.rowsForPage;
+				$ctrl.updatePages();
+                $ctrl.nuevaData = $ctrl.data.slice(desde, hasta);
+            });
 		}
 	});
