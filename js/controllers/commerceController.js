@@ -22,6 +22,10 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 				return;
 			}
 
+			if(!commerce.comercial){
+				commerce.comercial = {};
+			}
+
 			CommerceService.addCommerce(commerce);
 
 			$ctrl.commerceList = CommerceService.returnCommerces();

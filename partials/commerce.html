@@ -70,7 +70,36 @@
 			      	</span>
 			      </div>
 			    </div>
-			</div>
+
+			    <div class="form-group row">
+			      <label class="col-sm-2 col-form-label">Horarios de atención</label>
+			      <div class="col-sm-2">
+					  <div class="input-group">
+                        <input ng-model="$ctrl.commerce.open" name="open" type="time" class="form-control input-small" placeholder="hh:mm" required id="datetimepicker5">
+                        <span class="input-group-addon" data-time-icon="icon-time" data-date-icon="icon-calendar"><i class="glyphicon glyphicon-time"></i></span>
+                      </div>
+
+                      <span ng-show="	$ctrl.commerceForm.open.$dirty 	&& 	$ctrl.commerceForm.open.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.open.$error.required" class="error">
+			      			Este campo es obligatorio
+			      		</span>
+			      </div>
+			      <div class="col-sm-2">
+					  <div class="input-group">
+                        <input ng-model="$ctrl.commerce.close" name="close" type="time" class="form-control input-small" placeholder="HH:mm" min="00:00" max="23:59" required >
+                        <span class="input-group-addon" data-time-icon="icon-time" data-date-icon="icon-calendar"><i class="glyphicon glyphicon-time"></i></span>
+                      </div>
+                      <span ng-show="	$ctrl.commerceForm.close.$dirty 	&& 	$ctrl.commerceForm.close.$error.required 	|| 
+			      					$ctrl.commerceForm.$submitted 		&&  $ctrl.commerceForm.close.$error.required" class="error">
+			      			Este campo es obligatorio
+			      		</span>
+			      </div>
+			      <div class="col-sm-5 col-sm-offset-2"></div>
+			    </div>
+
+
+
+			    
 
 			
 

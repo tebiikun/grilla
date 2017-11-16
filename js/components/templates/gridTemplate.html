@@ -1,16 +1,17 @@
-<div class="col-md-12">
+<div class="col-md-12 well">
 	<div class="col-md-1">
-     	<div class="button-group">
-	        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span> Filtros</button>
-	  	</div>
+	        <div data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span> <strong>Filtros</strong></div>
 	</div>
 	<div class="col-md-11">
-		<form class="form-inline col-md-12">
-		    <div class="form-group col-md-3" ng-repeat="col in $ctrl.config.data">
-		        <label ng-if="col.filter">{{col.colName}}</label>
-		        <input  type="text" ng-if="col.filter" ng-change="$ctrl.createFilterModel(col.attr, $ctrl.searchModel[$index])" ng-model="$ctrl.searchModel[$index]" class="form-control" placeholder="Search">
+		<div class="form-inline row">
+		    <div class="form-group col-md-5" ng-repeat="col in $ctrl.config.data" ng-if="col.filter">
+		    	<div>
+		    		<span class="col-md-5">{{col.colName}}</span>
+		        	<div class="col-md-5"><input  type="text" ng-if="col.filter" ng-change="$ctrl.createFilterModel(col.attr, $ctrl.searchModel[$index])" ng-model="$ctrl.searchModel[$index]" class="form-control col-md-8" placeholder="Search"></div>
+		    	</div>
+		        
 		    </div>
-		</form>
+		</div>
 	</div>
 	
 </div>

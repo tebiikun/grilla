@@ -5,7 +5,7 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 
 		$ctrl.commerceList = [];
 		$ctrl.commerceList = CommerceService.returnCommerces();
-		
+
 		$ctrl.goCommerce = function(id){
 
 			if(id){
@@ -24,13 +24,13 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 		$ctrl.gridConfig =
 		{	
 			pagination:{
-				rowsForPage: 4
+				rowsForPage: 3
 			},
 			data:
 			[
 				{
-					attr: ['nombre','comercial.nombre'],
-					colName: 'nombre + N. comercial',
+					attr: ['nombre'],
+					colName: 'Comercio',
 					order: true,
 					reverse: true,
 					filter: true,
@@ -48,21 +48,20 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 				},
 				{
 					attr: 'descripcion',
-					colName: 'descripcion princ.',
+					colName: 'Descripcion',
 					order: true,
 					reverse: true,
 					filter: true
 				},
 				{
-					attr: 'comercial.apellido',
-					colName: 'apellido comercial',
+					attr: ['comercial.telefono', 'administrativo.telefono'],
+					colName: 'Telefonos',
 					order: false,
-					reverse: true,
-					filter: true
+					reverse: true
 				},
 				{
-					attr: 'direccion',
-					colName: 'direccion',
+					attr: 'especialidades',
+					colName: 'Especialidades',
 					order: true,
 					reverse: true,
 					filter: true

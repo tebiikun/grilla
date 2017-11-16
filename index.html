@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="despegar">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="despegar" charset="UTF-8">
 <head>
 	<title>Examen despegar</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
@@ -24,15 +25,16 @@
 
 </head>
 <body>
-	<header></header>
+	<header>
+		<h1>Delivery Online</h1>
+	</header>
 	<div class="container main">
 		<ng-view></ng-view>
 	</div>
 	<footer></footer>
 
 	<script type="text/javascript" src="js/libraries/jquery.min.js"></script>
-	<script type="text/javascript" src="js/libraries/dirPagination.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="js/libraries/bootstrap.min.js"></script>
 </body>
 </html>

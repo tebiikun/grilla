@@ -9,13 +9,16 @@ textarea{
 header{
 	width: 100%;
 	height: 70px;
-	background-color: #4a4da9;
+	background-color: #325065;
 	margin-bottom: 30px;
+	color: #fff;
+	display: block;
+    overflow: hidden;
 }
 footer{
 	width: 100%;
 	height: 70px;
-	background-color: #4a4da9;
+	background-color: #325065;
 	margin-top: 30px;
 }
 
