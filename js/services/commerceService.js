@@ -13,8 +13,8 @@ despegarApp.factory('CommerceService', function() {
 			comercial: {
 				email: "micorreo@gmail.com", 
 				telefono: "111", 
-				apellido: "ape com", 
-				nombre: "nombre com"
+				apellido: "ape1", 
+				nombre: "nom34 com"
 		},
 			descripcion: "b",
 			direccion: "calle falsa 345",
@@ -33,13 +33,13 @@ despegarApp.factory('CommerceService', function() {
 			comercial: {
 				email: "micorreo@gmail.com", 
 				telefono: "222", 
-				apellido: "ape1", 
+				apellido: "ape2", 
 				nombre: "nombre com"
 			},
 			descripcion: "a",
 			direccion: "calle falsa 222",
 			especialidades: "esta es mi especialidad de comidas",
-			nombre: "nombre2",
+			nombre: "nom34534536346345",
 			telefono: "4488775544"
 		},
 		{
@@ -53,13 +53,13 @@ despegarApp.factory('CommerceService', function() {
 			comercial: {
 				email: "micorreo@gmail.com", 
 				telefono: "333", 
-				apellido: "ape com", 
+				apellido: "ape3", 
 				nombre: "nombre com"
 			},
 			descripcion: "d",
 			direccion: "calle falsa 756",
 			especialidades: "esta es mi especialidad de comidas",
-			nombre: "nombre3",
+			nombre: "nom34534re3",
 			telefono: "4488775544"
 		},
 		{

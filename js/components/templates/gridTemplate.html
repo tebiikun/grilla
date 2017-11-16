@@ -1,8 +1,25 @@
+<div class="col-md-12">
+	<div class="col-md-1">
+     	<div class="button-group">
+	        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span> Filtros</button>
+	  	</div>
+	</div>
+	<div class="col-md-11">
+		<form class="form-inline col-md-12">
+		    <div class="form-group col-md-3" ng-repeat="col in $ctrl.config.data">
+		        <label ng-if="col.filter">{{col.colName}}</label>
+		        <input  type="text" ng-if="col.filter" ng-change="$ctrl.createFilterModel(col.attr, $ctrl.searchModel[$index])" ng-model="$ctrl.searchModel[$index]" class="form-control" placeholder="Search">
+		    </div>
+		</form>
+	</div>
+	
+</div>
+
 <table class="table table-striped">
 	<thead>
 		<th ng-repeat="col in $ctrl.config.data">{{col.colName}} 
 			<span ng-if="col.order" ng-click="$ctrl.sortFunction(col)">
-				<i ng-class="{'glyphicon glyphicon-chevron-up': col.direction == 'asc', 'glyphicon glyphicon-chevron-down': col.direction == 'desc'}"></i>
+				<i ng-class="{'glyphicon glyphicon-chevron-down': !col.reverse, 'glyphicon glyphicon-chevron-up': col.reverse}"></i>
 			</span>
 		</th>
 	</thead>
@@ -26,7 +43,7 @@
         </td>
     </tfoot>
     <tbody>
-	    <tr ng-repeat="row in $ctrl.nuevaData track by $index">
+	    <tr ng-repeat="row in $ctrl.data | filter : $ctrl.searchFilter | orderBy : $ctrl.orderByExpression : $ctrl.orderByReverse: $ctrl.orderByComparator | limitTo : $ctrl.rowsForPage : $ctrl.beginPage track by $index">
 			<td ng-repeat="col in $ctrl.config.data">
 				<span ng-bind-html="$ctrl.showContent(row, col)" ng-click="$ctrl.runAction(row, col)"></span>
 			</td>
