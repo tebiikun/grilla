@@ -7,10 +7,7 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 		$ctrl.commerce = {}
 		$ctrl.commerceList = [];
 
-		if($ctrl.isNewCommerce){
-			$ctrl.commerce = CommerceService.getMockCommerce();
-		}
-		else{
+		if(!$ctrl.isNewCommerce){
 			$ctrl.commerce = CommerceService.getCommerce($routeParams.id);
 		}
 
@@ -51,6 +48,10 @@ despegarApp.controller('CommerceController', [ '$scope', '$location', '$routePar
 			}else{
 				$ctrl.updateCommerce($ctrl.commerce);
 			}
+		}
+
+		$ctrl.goBack = function(){
+			$location.path('/');
 		}
 
 	}]);

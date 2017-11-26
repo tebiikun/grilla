@@ -1,24 +1,35 @@
-despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceService',
-	function($scope, $location, CommerceService){
+despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceService', '$uibModal', '$document',
+	function($scope, $location, CommerceService, $uibModal, $document){
 
 		var $ctrl = this;
 
 		$ctrl.commerceList = [];
 		$ctrl.commerceList = CommerceService.returnCommerces();
 
-		$ctrl.goCommerce = function(id){
+		$ctrl.goCommerce = function(row){
 
-			if(id){
-				$location.path('/commerce/'+id);
+			if(row){
+				$location.path('/commerce/'+row.id);
 			}else{
 				$location.path('/commerce/');
 			}
 			
 		}
 
-		$ctrl.delete= function(id){
-			CommerceService.deleteCommerce(id);
-			$ctrl.commerceList = CommerceService.returnCommerces();
+		$ctrl.showAlertDelete = function(row){
+		    var modalInstance = $uibModal.open({
+				templateUrl: 'partials/modals/delete.html',
+				controller: 'ModalController',
+				controllerAs: '$ctrl',
+				size: 'lg',
+				resolve: {
+					element: function () {
+						return row;
+					}
+				}
+		    }).result.catch(function (resp) {
+			    if (['cancel', 'backdrop click', 'escape key press'].indexOf(resp) === -1) throw resp;
+			});;
 		}
 
 		$ctrl.gridConfig =
@@ -73,8 +84,8 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 						return 	'<a class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>'
 								
 					},
-					action: function(id){
-						$ctrl.goCommerce(id);
+					action: function(row){
+						$ctrl.goCommerce(row);
 					}
 				},
 				{
@@ -83,8 +94,8 @@ despegarApp.controller('ListController', [ '$scope', '$location', 'CommerceServi
 					render : function(){
 						return 	'<a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>'
 					},
-					action: function(id){
-						$ctrl.delete(id);
+					action: function(row){
+						$ctrl.showAlertDelete(row);
 					}
 				}
 			]

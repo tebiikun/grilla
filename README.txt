@@ -17,7 +17,7 @@ para este desarrollo los puntos a tener en cuenta son los siguientes:
 
 GRILLA:
 
-Para utilizar la grilla en el html:
+Para utilizar la grilla en el html: (list.html)
 
 <grid-table data="data" config="gridConfig"></grid-table>
 

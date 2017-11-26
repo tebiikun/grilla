@@ -12,7 +12,7 @@
 
 			$ctrl.runAction = function(row, col){
 				if(col.action){
-					return col.action(row.id);
+					return col.action(row);
 				}
 			}
 
@@ -49,7 +49,6 @@
 				$ctrl.changeStateFilter = !$ctrl.changeStateFilter;
 			}
 			
-
 			$ctrl.sortFunction = function(col){
 				if(col.reverse == undefined){
 					col.reverse = false;

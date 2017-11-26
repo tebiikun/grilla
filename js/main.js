@@ -1,4 +1,4 @@
-var despegarApp = angular.module('despegar',['ngRoute', 'ngSanitize'])
+var despegarApp = angular.module('despegar',['ngRoute', 'ngSanitize', 'ui.bootstrap'])
 	
 	.config(['$routeProvider', function($routeProvider){
 

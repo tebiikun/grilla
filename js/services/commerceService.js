@@ -185,7 +185,6 @@ despegarApp.factory('CommerceService', function() {
 					break;
 				}
 			}
-			console.log(commerceList);
 			console.log("se elimino el comercio: " + id);
 		},
 
@@ -199,30 +198,6 @@ despegarApp.factory('CommerceService', function() {
 
 		returnCommerces : function(){
 			return commerceList;
-		},
-
-		getMockCommerce : function(){
-			return {
-				administrativo:{
-					nombre: "nombre adm mock", 
-					apellido: "ape adm mock", 
-					telefono: "000 mock", 
-					email: "correo.adm.mock@mock.com"
-				},
-				comercial: {
-					email: "micorrecomercial.mock@mock.com", 
-					telefono: "999 mock", 
-					apellido: "ape com mock", 
-					nombre: "nombre com mock"
-				},
-				open: new Date(1970, 0, 1, 14, 57, 0),
-				close: new Date(1970, 0, 1, 14, 57, 0),
-				descripcion: "comercio mock",
-				direccion: "calle mock 666",
-				especialidades: "esta es mi especialidad de comidas mockeadas",
-				nombre: "nombre princ mock",
-				telefono: "0303456 mock"
-			};
 		}
 	}
 
